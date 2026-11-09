@@ -128,8 +128,11 @@ footer .wrap{padding-block:24px;display:flex;flex-wrap:wrap;gap:8px 24px;justify
 
 /* lightbox */
 .lb{position:fixed;inset:0;z-index:20;background:rgba(12,10,8,.92);display:grid;grid-template-columns:minmax(0,1fr) 340px;padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px)}
-.lb .stage{display:flex;align-items:center;justify-content:center;padding:24px;min-width:0;min-height:0;position:relative}
-.lb .stage img{max-width:100%;max-height:calc(100vh - 48px);object-fit:contain;border-radius:4px}
+.lb .stage{display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center;padding:24px;min-width:0;min-height:0;position:relative}
+.dl{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#2a1d12;border-radius:999px;padding:8px 16px;font-size:.88rem;font-weight:600;text-decoration:none;white-space:nowrap}
+.dl svg{width:16px;height:16px}
+.vdl{font-size:.86rem;color:var(--caramel-ink);font-weight:500}
+.lb .stage img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:4px}
 .lb aside{background:var(--bg);color:var(--ink);padding:20px 16px;display:flex;flex-direction:column;gap:12px;overflow:auto}
 .lb aside h3{font-size:1.3rem;font-weight:400}
 .lb .notes{max-height:none}
@@ -242,6 +245,7 @@ footer .wrap{padding-block:24px;display:flex;flex-wrap:wrap;gap:8px 24px;justify
     <button class="close" id="lb-close" type="button" aria-label="Cerrar">×</button>
     <button class="nav prev" id="lb-prev" type="button" aria-label="Anterior">‹</button>
     <img id="lb-img" alt="">
+    <a class="dl" id="lb-dl" href="#" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg><span id="lb-dl-t">Descargar en alta</span></a>
     <button class="nav next" id="lb-next" type="button" aria-label="Siguiente">›</button>
   </div>
   <aside>
@@ -251,6 +255,7 @@ footer .wrap{padding-block:24px;display:flex;flex-wrap:wrap;gap:8px 24px;justify
 </div>
 
 <script>
+const HQ="hq/",SAME=true;
 const VIDEOS=[
   {id:"v-principal",title:"Video principal",src:"vid/principal.mp4",poster:"img/poster_principal.jpg",
    copy:"Distintos estilos.\nDiferentes prioridades…\nNinguno listo al mismo tiempo ⏱️\n\nPara cada uno hay un OP.\nUn OP para todos.\n<b>#UnOpParaTodos</b>"},
@@ -275,7 +280,7 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",
 const vw=document.getElementById("vids");
 VIDEOS.forEach(v=>{
   const c=document.createElement("article");c.className="vid";
-  c.innerHTML=`<video controls playsinline preload="metadata" poster="${v.poster}" src="${v.src}"></video><h3>${v.title}</h3><p class="copy">${v.copy}</p>`;
+  c.innerHTML=`<video controls playsinline preload="metadata" poster="${v.poster}" src="${v.src}"></video><h3>${v.title}</h3><p class="copy">${v.copy}</p><a class="vdl" href="${SAME?v.src:HQ.replace('hq/','')+v.src}" ${SAME?'download':'target="_blank"'} rel="noopener">Descargar video ↓</a>`;
   vw.appendChild(c);
 });
 
@@ -296,6 +301,7 @@ const lb=document.getElementById("lb");let cur=0,lastFocus=null;
 function showLb(i){
   cur=(i+PIECES.length)%PIECES.length;const p=PIECES[cur];
   document.getElementById("lb-img").src=p.src;document.getElementById("lb-img").alt=p.label;
+  {const dl=document.getElementById("lb-dl");dl.href=HQ+p.id+".jpg";if(SAME){dl.setAttribute("download","OP-para-todos-"+p.label.normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^A-Za-z0-9]+/g,"-")+".jpg")}else{dl.target="_blank";document.getElementById("lb-dl-t").textContent="Abrir en alta"}}
   document.getElementById("lb-title").textContent=p.label;document.getElementById("lb-sec").textContent=p.sec;
 }
 function openLb(i){lastFocus=document.activeElement;lb.hidden=false;document.body.style.overflow="hidden";showLb(i);document.getElementById("lb-close").focus()}

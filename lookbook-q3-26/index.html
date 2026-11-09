@@ -122,12 +122,16 @@ section.block{padding-block:56px 8px;scroll-margin-top:110px}
 footer{margin-top:64px;border-top:1px solid var(--line)}
 footer .wrap{padding-block:24px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;font-size:.78rem;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
 
-.lb{position:fixed;inset:0;z-index:20;background:rgba(6,14,20,.94);display:grid;grid-template-columns:minmax(0,1fr) 340px;padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px)}
+.lb{position:fixed;inset:0;z-index:20;background:rgba(6,14,20,.97);display:grid;grid-template-columns:minmax(0,1fr) 340px;padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px)}
 .lb.nonotes{grid-template-columns:minmax(0,1fr)}
 .lb.nonotes aside{display:none}
 .lb .stage{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px 64px;min-width:0;min-height:0;position:relative}
 .lb .stage img{max-width:100%;max-height:calc(100vh - 90px);object-fit:contain;border-radius:4px}
 .lb .cap{color:#fff;font-size:.9rem;opacity:.85;text-align:center}
+.lb .bar2{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center}
+.dl{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#0b2f4a;border-radius:999px;padding:8px 16px;font-size:.88rem;font-weight:600;text-decoration:none;white-space:nowrap}
+.dl svg{width:16px;height:16px}
+.vdl{font-size:.84rem;color:var(--ocean-ink);font-weight:500}
 .lb aside{background:var(--bg);color:var(--ink);padding:20px 16px;display:flex;flex-direction:column;gap:12px;overflow:auto}
 .lb aside h3{font-size:1.3rem;font-weight:400}
 .lb .notes{max-height:none}
@@ -169,7 +173,7 @@ footer .wrap{padding-block:24px;display:flex;flex-wrap:wrap;gap:8px 24px;justify
   </div>
 </header>
 
-<div class="hero"><img src="img/f/p1.jpg" alt="Ocean Pacific · lookbook colección Q3 2026"></div>
+<div class="hero"><img src="img/f/p1.jpg" fetchpriority="high" alt="Ocean Pacific · lookbook colección Q3 2026"></div>
 
 <main class="wrap">
   <div class="intro">
@@ -180,7 +184,7 @@ footer .wrap{padding-block:24px;display:flex;flex-wrap:wrap;gap:8px 24px;justify
     </div>
     <div>
       <p class="lede">Portafolio de contenido para calzado Dama y Caballero de la colección Q3 2026, en un entorno neutro y versátil para mantener la narrativa consistente en todos los canales y retailers de la región. Pone el foco en los modelos que destacan y suma cápsulas para sacudir la estética minimalista y reforzar el fashion.</p>
-      <div class="how" id="how">Abre cualquier pieza para verla en grande y dejar notas. Todo el equipo ve las mismas notas.</div>
+      <div class="how" id="how">Abre cualquier pieza para verla en grande, dejar notas o abrirla en alta resolución. Todo el equipo ve las mismas notas.</div>
     </div>
   </div>
 
@@ -214,7 +218,7 @@ footer .wrap{padding-block:24px;display:flex;flex-wrap:wrap;gap:8px 24px;justify
     <button class="close" id="lb-close" type="button" aria-label="Cerrar">×</button>
     <button class="nav prev" id="lb-prev" type="button" aria-label="Anterior">‹</button>
     <img id="lb-img" alt="">
-    <div class="cap" id="lb-cap"></div>
+    <div class="bar2"><div class="cap" id="lb-cap"></div><a class="dl" id="lb-dl" href="#" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg><span id="lb-dl-t">Descargar en alta</span></a></div>
     <button class="nav next" id="lb-next" type="button" aria-label="Siguiente">›</button>
   </div>
   <aside>
@@ -226,6 +230,8 @@ footer .wrap{padding-block:24px;display:flex;flex-wrap:wrap;gap:8px 24px;justify
 
 <script>
 const NOTES=false;
+const HQ="hq/";const SAME=HQ.indexOf("http")!==0;
+const slug=s=>s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^A-Za-z0-9]+/g,"-").replace(/^-|-$/g,"");
 const DATA={"videos":[{"f":"lanz1","t":"Lanzamiento 1","d":"Expectativa y anuncio de llegada de la colección."},{"f":"lanz2","t":"Lanzamiento 2","d":"New collection."},{"f":"rael","t":"Rael","d":"Estilo y dinamismo en cada paso."},{"f":"bez","t":"Bez","d":"Caballero."}],"videoGap":"","sections":[{"id":"expectativa","title":"Expectativa y llegada","short":"Expectativa","sub":"Anuncio de llegada de la colección","models":[{"name":"Expectativa y llegada","slug":"todo","pages":[229,231,232,233,234,235,236],"formats":"Video + posts + stories"}]},{"id":"caballero","title":"Caballero","short":"Caballero","sub":"7 modelos","models":[{"name":"Rael","slug":"rael","pages":[31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47],"formats":"Video + posts + stories"},{"name":"Dario","slug":"dario","pages":[48,49,50,51],"formats":"Posts + stories"},{"name":"Bez","slug":"bez","pages":[52,53,54,55,56,57,58,59],"formats":"Video + posts + stories"},{"name":"Nil","slug":"nil","pages":[60,61,62,63,64,65,66,67,68,69],"formats":"Posts + stories"},{"name":"Tru","slug":"tru","pages":[70,71,72,73],"formats":"Posts + stories"},{"name":"Pelin","slug":"pelin","pages":[74,75,76,77,78,79,80,81],"formats":"Posts + stories"},{"name":"Elian y Samuel","slug":"elian-samuel","pages":[82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98],"formats":"Posts + stories"}]},{"id":"dama","title":"Dama","short":"Dama","sub":"10 modelos","models":[{"name":"Kala","slug":"kala","pages":[99,100,101,102,103,104,105],"formats":"Posts + stories"},{"name":"Aneli","slug":"aneli","pages":[106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123],"formats":"Video + posts + stories"},{"name":"Vunel","slug":"vunel","pages":[124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139],"formats":"Video + posts + stories"},{"name":"Meli","slug":"meli","pages":[140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157],"formats":"Posts + stories"},{"name":"Sela","slug":"sela","pages":[158,159,160,161,162,163,164,165,166,167,168,169,170,171,172],"formats":"Posts + stories"},{"name":"Otros estilos","slug":"otros","pages":[173,174,175,176,177,178],"formats":"Posts + stories"},{"name":"Bez","slug":"bez","pages":[179,180,181,182,183,184],"formats":"Posts + stories"},{"name":"Gal","slug":"gal","pages":[185,186,187,188],"formats":"Posts + stories"},{"name":"Aitana","slug":"aitana","pages":[189,190,191,192,193,194,195,196],"formats":"Posts + stories"},{"name":"Nia","slug":"nia","pages":[197,198,199,200,201,202,203,204,205,206,207,208,209,210],"formats":"Posts + stories"}]},{"id":"fashion","title":"The Fashion Menu","short":"Fashion Menu","sub":"Cápsulas Ina y Sia · Op Fashion Files","models":[{"name":"Ina","slug":"ina","pages":[212,213,214,215,216],"formats":"Posts + stories"},{"name":"Sia","slug":"sia","pages":[218,219,220,221,222,223,224,225,226,227,228],"formats":"Posts + stories"}]}],"dims":{"31":[1080,1350],"32":[1080,1920],"33":[1080,1350],"34":[1080,1920],"35":[1080,1350],"36":[1080,1920],"37":[1080,1350],"38":[1080,1920],"39":[1080,1350],"40":[1080,1920],"41":[1080,1920],"42":[1080,1350],"43":[1080,1920],"44":[1080,1350],"45":[1080,1920],"46":[1080,1350],"47":[1080,1920],"48":[1080,1350],"49":[1080,1920],"50":[1080,1350],"51":[1080,1920],"52":[1080,1350],"53":[1080,1920],"54":[1080,1350],"55":[1080,1920],"56":[1080,1350],"57":[1080,1920],"58":[1080,1350],"59":[1080,1920],"60":[1080,1350],"61":[1080,1920],"62":[1080,1350],"63":[1080,1920],"64":[1080,1350],"65":[1080,1920],"66":[1080,1350],"67":[1080,1920],"68":[1080,1350],"69":[1080,1920],"70":[1080,1191],"71":[1080,1920],"72":[1080,1920],"73":[1080,1350],"74":[1080,1350],"75":[1080,1920],"76":[1080,1920],"77":[1080,1350],"78":[1080,1920],"79":[1080,1350],"80":[1080,1920],"81":[1080,1350],"82":[1080,1350],"83":[1080,1920],"84":[1080,1920],"85":[1080,1350],"86":[1080,1350],"87":[1080,1920],"88":[1080,1920],"89":[1080,1350],"90":[1080,1920],"91":[1080,1350],"92":[1080,1920],"93":[1080,1350],"94":[1080,1920],"95":[1080,1350],"96":[1080,1920],"97":[1080,1920],"98":[1080,1350],"99":[1080,1920],"100":[1080,1191],"101":[1080,1191],"102":[1080,1920],"103":[1080,1191],"104":[1080,1191],"105":[1080,1920],"106":[1080,1920],"107":[1080,1499],"108":[1080,1499],"109":[1080,1920],"110":[1080,1350],"111":[1080,1920],"112":[1080,1499],"113":[1080,1920],"114":[1080,1499],"115":[1080,1920],"116":[1080,1499],"117":[1080,1920],"118":[1080,1499],"119":[1080,1920],"120":[1080,1499],"121":[1080,1920],"122":[1080,1499],"123":[1080,1920],"124":[1080,1350],"125":[1080,1350],"126":[1080,1920],"127":[1080,1350],"128":[1080,1920],"129":[1080,1350],"130":[1080,1920],"131":[1080,1350],"132":[1080,1920],"133":[1080,1350],"134":[1080,1920],"135":[1080,1350],"136":[1080,1920],"137":[1080,1350],"138":[1080,1920],"139":[1080,1350],"140":[1080,1350],"141":[1080,1920],"142":[1080,1350],"143":[1080,1920],"144":[1080,1350],"145":[1080,1920],"146":[1080,1350],"147":[1080,1920],"148":[1080,1350],"149":[1080,1920],"150":[1080,1350],"151":[1080,1920],"152":[1080,1350],"153":[1080,1350],"154":[1080,1350],"155":[1080,1920],"156":[1080,1350],"157":[1080,1920],"158":[1080,1920],"159":[1080,1920],"160":[1080,1920],"161":[1080,1350],"162":[1080,1920],"163":[1080,1350],"164":[1080,1920],"165":[1080,1350],"166":[1080,1920],"167":[1080,1350],"168":[1080,1920],"169":[1080,1350],"170":[1080,1920],"171":[1080,1350],"172":[1080,1920],"173":[1080,1350],"174":[1080,1920],"175":[1080,1350],"176":[1080,1350],"177":[1080,1350],"178":[1080,1920],"179":[1080,1500],"180":[1080,1920],"181":[1080,1500],"182":[1080,1920],"183":[1080,1191],"184":[1080,1920],"185":[1080,1920],"186":[1080,1350],"187":[1080,1350],"188":[1080,1920],"189":[1080,1920],"190":[1080,1350],"191":[1080,1350],"192":[1080,1920],"193":[1080,1350],"194":[1080,1920],"195":[1080,1191],"196":[1080,1920],"197":[1080,1920],"198":[1080,1350],"199":[1080,1350],"200":[1080,1350],"201":[1080,1920],"202":[1080,1350],"203":[1080,1920],"204":[1080,1350],"205":[1080,1350],"206":[1080,1350],"207":[1080,1350],"208":[1080,1350],"209":[1080,1350],"210":[1080,1920],"212":[1080,608],"213":[1080,608],"214":[1080,608],"215":[1080,608],"216":[1080,608],"218":[1080,1350],"219":[1080,1350],"220":[1080,1350],"221":[1080,1350],"222":[1080,1350],"223":[1080,1350],"224":[1080,1350],"225":[1080,1350],"226":[1080,1350],"227":[1080,1350],"228":[1080,1350],"229":[1080,1350],"231":[1080,1350],"232":[1080,1350],"233":[1080,1920],"234":[1080,1350],"235":[1080,1350],"236":[1080,1920],"1":[1600,900],"4":[1600,900],"5":[1600,900],"6":[1600,900]}};
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const fmtOf=([w,h])=>{const r=h/w;return r>1.6?"Story 9:16":r>1.15?"Post 4:5":r<0.75?"Lámina":"Post"};
@@ -271,7 +277,7 @@ let n=0;const num=()=>String(++n).padStart(2,"0");
   s.innerHTML=`<div class="shead"><span class="n">${k}</span><h2>Videos</h2><span class="c">Formato vertical 9:16</span></div><div class="vids"></div>${DATA.videoGap?`<p class="gap">${DATA.videoGap}</p>`:""}`;
   const v=s.querySelector(".vids");
   DATA.videos.forEach(x=>{const a=document.createElement("article");a.className="vid";
-    a.innerHTML=`<video controls playsinline preload="metadata" poster="img/poster_${x.f}.jpg" src="vid/${x.f}.mp4"></video><h3>${esc(x.t)}</h3><p>${esc(x.d)}</p>${NOTES?'<div class="notebox"></div>':''}`;
+    a.innerHTML=`<video controls playsinline preload="metadata" poster="img/poster_${x.f}.jpg" src="vid/${x.f}.mp4"></video><h3>${esc(x.t)}</h3><p>${esc(x.d)}</p><a class="vdl" href="${SAME?'vid/'+x.f+'.mp4':HQ.replace('hq/','vid/')+x.f+'.mp4'}" ${SAME?`download="OP-Lookbook-Q3-26-${slug(x.t)}.mp4"`:'target="_blank"'} rel="noopener">Descargar video ↓</a>${NOTES?'<div class="notebox"></div>':''}`;
     v.appendChild(a);if(NOTES)noteBox(a.querySelector(".notebox"),"v-"+x.f)});
   secHost.appendChild(s);
   idx.insertAdjacentHTML("beforeend",`<a href="#videos"><span class="n">${k}</span><span class="t">Videos</span><span class="c">${DATA.videos.length} piezas</span></a>`);
@@ -296,7 +302,7 @@ DATA.sections.forEach(sec=>{
  idx.insertAdjacentHTML("beforeend",`<a href="#identidad"><span class="n">${k}</span><span class="t">Logo</span><span class="c">Uso y contactos</span></a>`);
  chips.insertAdjacentHTML("beforeend",`<a class="line" href="#identidad">Logo</a>`);}
 document.getElementById("meta").innerHTML=`<span><b>${DATA.videos.length}</b> videos</span><span><b>${models}</b> modelos</span><span><b>${posts}</b> posts</span><span><b>${stories}</b> stories</span>`;
-if(!NOTES){document.getElementById("how").textContent="Abre cualquier pieza para verla en grande. Los archivos en alta resolución están en Dropbox.";document.getElementById("lb").classList.add("nonotes")}
+if(!NOTES){document.getElementById("how").textContent="Abre cualquier pieza para verla en grande y descargarla en alta resolución (2160 px). También puedes bajar todo desde Dropbox.";document.getElementById("lb").classList.add("nonotes")}
 
 function updateCounts(){if(!NOTES)return;document.querySelectorAll(".tile").forEach(t=>{const c=notesFor(t.dataset.piece).length;t.querySelector(".cnt").textContent=c?c+(c===1?" nota":" notas"):""})}
 
@@ -312,6 +318,8 @@ function showLb(i){
   const img=document.getElementById("lb-img");img.src=`img/f/p${p.p}.jpg`;img.alt=`${p.label} · ${p.fmt}`;
   document.getElementById("lb-title").textContent=p.label;document.getElementById("lb-sec").textContent=p.sec;
   document.getElementById("lb-cap").textContent=`${p.label} · ${p.fmt} · ${cur+1} de ${PIECES.length}`;
+  const dl=document.getElementById("lb-dl");dl.href=HQ+`p${p.p}.jpg`;
+  if(SAME){dl.setAttribute("download",`OP-Lookbook-Q3-26-${slug(p.label)}-${slug(p.fmt)}-${p.p}.jpg`);dl.removeAttribute("target")}else{dl.target="_blank";document.getElementById("lb-dl-t").textContent="Abrir en alta"}
   if(NOTES){if(lbRender)subs.delete(lbRender);lbRender=noteBox(document.getElementById("lb-notes"),p.id)}
 }
 function openLb(i){lastFocus=document.activeElement;lb.hidden=false;document.body.style.overflow="hidden";showLb(i);document.getElementById("lb-close").focus()}
