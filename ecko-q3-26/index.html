@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ecko · Deja tu huella</title>
+<meta name="description" content="Videos, posts y stories de la campaña Ecko Unltd Deja tu huella, Q3 2026.">
+<meta property="og:title" content="Ecko · Deja tu huella">
+<meta property="og:image" content="img/f/slide-2.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=Permanent+Marker&display=swap">
+<style>
+/* Layout: a jobsite delivery room. Black and concrete like the shoot, Ecko red for every action, condensed poster type for headings and one hand-painted word ("huella") as the single flourish. Videos first, then posts and stories grouped by boot model, then the deck's campaign plates, then concept and contacts. */
+:root{
+  --bg:#0d0d0d; --surface:#181818; --raise:#222; --ink:#f1efec; --muted:#a19d97; --line:#2c2b29;
+  --red:#e3242f; --red-ink:#ff4b55; --on-red:#ffffff; --concrete:#cfccc6;
+  --display:"Anton","Impact","Haettenschweiler","Arial Narrow Bold",sans-serif;
+  --body:"Archivo","Helvetica Neue","Segoe UI",system-ui,sans-serif;
+  --hand:"Permanent Marker","Segoe Print","Comic Sans MS",cursive;
+  --r:4px; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--red-ink);outline-offset:2px}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:.01em;text-wrap:balance;margin:0}
+.eyebrow{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:600}
+
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar .row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.mark{font-family:var(--display);font-size:1.35rem;letter-spacing:.04em;display:flex;align-items:baseline;gap:10px;text-transform:uppercase}
+.mark small{font-family:var(--body);font-size:.78rem;color:var(--muted);letter-spacing:.06em;text-transform:none}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:var(--on-red);border-radius:var(--r);padding:9px 16px;font-size:.86rem;font-weight:600;text-decoration:none;white-space:nowrap;letter-spacing:.02em}
+.btn svg{width:16px;height:16px}
+.models{display:flex;gap:6px;overflow-x:auto;padding-bottom:10px;scrollbar-width:thin}
+.models a{flex:none;text-decoration:none;font-size:.8rem;padding:4px 11px;border-radius:var(--r);background:var(--raise);white-space:nowrap;letter-spacing:.03em}
+.models a.line{background:transparent;color:var(--muted);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.68rem;padding-inline:6px 2px}
+.models a.on{background:var(--red);color:var(--on-red)}
+
+.hero{background:#000}
+.hero img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;max-height:74vh}
+
+.intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:48px;padding-block:52px 28px;align-items:start}
+.intro h1{font-size:clamp(3rem,8vw,6rem);line-height:.92}
+.intro h1 .hand{font-family:var(--hand);color:var(--red-ink);text-transform:none;display:block;font-size:.9em;transform:rotate(-4deg);transform-origin:left;margin-top:.1em}
+.lede{font-size:1.06rem;max-width:60ch;margin:0;color:var(--concrete)}
+.lede a{color:var(--red-ink)}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:26px;font-size:.88rem;color:var(--muted)}
+.meta b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+.how{margin-top:20px;padding:14px 16px;border-left:3px solid var(--red);background:var(--surface);font-size:.92rem;color:var(--concrete)}
+
+.index{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.index a{display:flex;flex-direction:column;gap:2px;padding:16px 14px;text-decoration:none;border-right:1px solid var(--line)}
+.index a:last-child{border-right:0}
+.index a:hover{background:var(--surface)}
+.index .n{font-size:.78rem;color:var(--red-ink);font-weight:700;font-variant-numeric:tabular-nums}
+.index .t{font-family:var(--display);font-size:1.25rem;text-transform:uppercase}
+.index .c{font-size:.8rem;color:var(--muted)}
+
+section.block{padding-block:56px 8px;scroll-margin-top:110px}
+.shead{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:24px;border-bottom:1px solid var(--line);padding-bottom:14px}
+.shead .n{font-family:var(--display);color:var(--red-ink);font-variant-numeric:tabular-nums;font-size:1.1rem}
+.shead h2{font-size:clamp(2rem,4vw,3rem)}
+.shead .c{margin-left:auto;font-size:.86rem;color:var(--muted)}
+
+.model{padding-block:24px 18px;scroll-margin-top:110px;border-bottom:1px solid var(--line)}
+.model:last-child{border-bottom:0}
+.mhead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.mhead h3{font-size:2rem}
+.code{font-size:.74rem;padding:2px 8px;border-radius:var(--r);background:var(--raise);color:var(--muted);font-weight:600;letter-spacing:.06em}
+.mhead .cnt2{margin-left:auto;font-size:.82rem;color:var(--muted);font-variant-numeric:tabular-nums}
+
+.mason{columns:4 220px;column-gap:12px}
+.mason.wide{columns:2 340px}
+.tile{position:relative;break-inside:avoid;margin:0 0 12px;border:0;padding:0;background:var(--surface);border-radius:var(--r);overflow:hidden;display:block;width:100%;text-align:left}
+.tile img{display:block;width:100%;height:auto;transition:transform .5s ease}
+.tile:hover img{transform:scale(1.025)}
+.tile .fmt{position:absolute;left:8px;bottom:8px;background:rgba(0,0,0,.72);color:#fff;font-size:.7rem;font-weight:600;border-radius:var(--r);padding:2px 8px;letter-spacing:.04em}
+.tile .cnt{position:absolute;right:8px;top:8px;background:var(--red);color:var(--on-red);font-size:.7rem;font-weight:700;border-radius:var(--r);padding:2px 8px}
+.tile .cnt:empty{display:none}
+
+.vids{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;max-width:980px}
+.vid{display:flex;flex-direction:column;gap:10px;min-width:0}
+.vid video{width:100%;aspect-ratio:9/16;object-fit:cover;background:#000;border-radius:var(--r);display:block;max-width:100%}
+.vid h3{font-size:1.4rem}
+.vid p{margin:0;font-size:.88rem;color:var(--muted)}
+.vdl{font-size:.86rem;color:var(--red-ink);font-weight:600}
+
+.notebox{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);padding:12px}
+.notebox form{display:flex;gap:8px}
+.notebox input{flex:1;min-width:0;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:var(--r);padding:8px 10px;font:inherit;font-size:.9rem}
+.notebox button[type=submit]{border:0;background:var(--red);color:var(--on-red);border-radius:var(--r);padding:0 12px;font-size:.85rem;font-weight:600}
+.notes{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:8px;max-height:240px;overflow:auto}
+.notes li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;font-size:.88rem}
+.notes .who{display:block;font-size:.74rem;color:var(--muted)}
+.notes .x{border:0;background:transparent;color:var(--muted);font-size:1rem;line-height:1;padding:0 2px}
+.empty{font-size:.84rem;color:var(--muted);margin:10px 0 0}
+.status{font-size:.8rem;color:var(--muted);margin:8px 0 0}
+
+.concept{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:36px;align-items:start}
+.concept blockquote{margin:0;font-size:1.15rem;line-height:1.6;color:var(--concrete);border-left:3px solid var(--red);padding-left:18px}
+.concept blockquote a{color:var(--red-ink)}
+.facts{display:grid;gap:16px}
+.fact{border-top:1px solid var(--line);padding-top:12px}
+.fact .k{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.fact .v{font-size:1.04rem}
+.fact .v small{display:block;color:var(--muted);font-size:.86rem}
+.copyline{display:inline-flex;gap:6px;align-items:center}
+.copyline button{border:1px solid var(--line);background:transparent;border-radius:var(--r);font-size:.72rem;padding:1px 8px;color:var(--muted)}
+
+footer{margin-top:64px;border-top:1px solid var(--line)}
+footer .wrap{padding-block:24px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;font-size:.76rem;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+
+.lb{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.96);display:grid;grid-template-columns:minmax(0,1fr) 340px;padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px)}
+.lb.nonotes{grid-template-columns:minmax(0,1fr)}
+.lb.nonotes aside{display:none}
+.lb .stage{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px 64px;min-width:0;min-height:0;position:relative}
+.lb .stage img{max-width:100%;max-height:calc(100vh - 100px);object-fit:contain;border-radius:2px}
+.lb .bar2{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center}
+.lb .cap{color:#fff;font-size:.9rem;opacity:.85}
+.dl{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:var(--on-red);border-radius:var(--r);padding:8px 16px;font-size:.88rem;font-weight:600;text-decoration:none;white-space:nowrap}
+.dl svg{width:16px;height:16px}
+.lb aside{background:var(--surface);padding:20px 16px;display:flex;flex-direction:column;gap:12px;overflow:auto}
+.lb aside h3{font-size:1.5rem}
+.lb .notes{max-height:none}
+.lb .close{position:absolute;top:12px;left:12px;border:0;background:rgba(255,255,255,.14);color:#fff;border-radius:999px;width:38px;height:38px;font-size:1.3rem}
+.lb .nav{position:absolute;top:50%;transform:translateY(-50%);border:0;background:rgba(255,255,255,.14);color:#fff;border-radius:999px;width:42px;height:42px;font-size:1.2rem}
+.lb .prev{left:12px}.lb .next{right:12px}
+
+@media (max-width:980px){
+  .intro,.concept{grid-template-columns:minmax(0,1fr);gap:28px}
+  .index{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .index a{border-bottom:1px solid var(--line)}
+  .lb{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto}
+  .lb .stage{padding:56px 12px 12px}
+  .lb .stage img{max-height:52vh}
+  .lb aside{max-height:40vh}
+}
+@media (max-width:640px){
+  .vids{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .mason{columns:2;column-gap:8px}.tile{margin-bottom:8px}
+  .mason.wide{columns:1}
+  .mark small{display:none}
+  .shead .c,.mhead .cnt2{margin-left:0;width:100%}
+}
+@media (prefers-reduced-motion:reduce){.tile img{transition:none}}
+
+html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="wrap">
+    <div class="row">
+      <div class="mark">Ecko Unltd <small>Q3 · 2026</small></div>
+      <a class="btn" href="https://www.dropbox.com/scl/fo/zb891vqmns1dla35be8ln/AC84R0vIJQPy7lLcM3mzWaQ?rlkey=t5gsg8q4k2umvn0axv7xf2pso&amp;dl=0" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>Descargar todo</a>
+    </div>
+    <nav class="models" id="models" aria-label="Modelos"></nav>
+  </div>
+</header>
+
+<div class="hero"><img src="img/f/slide-2.jpg" alt="Deja tu huella · Ecko Unltd" fetchpriority="high"></div>
+
+<main class="wrap">
+  <div class="intro">
+    <div>
+      <div class="eyebrow">Ecko Unltd Footwear · Noviembre 2026</div>
+      <h1>Deja tu <span class="hand">huella</span></h1>
+      <div class="meta" id="meta"></div>
+    </div>
+    <div>
+      <p class="lede">Campaña creada con Alan Edel (<a href="https://www.instagram.com/alanedelll/" target="_blank" rel="noopener">@alanedelll</a>), creador de contenido panameño que comparte su día a día en la construcción. Representa a una nueva generación de trabajadores que deja huella en cada proyecto, y lleva las botas Ecko de forma auténtica en su rutina.</p>
+      <div class="how" id="how">Abre cualquier pieza para verla en grande, dejar notas o abrirla en alta resolución. Todo el equipo ve las mismas notas.</div>
+    </div>
+  </div>
+
+  <nav class="index" id="index" aria-label="Secciones"></nav>
+  <div id="sections"></div>
+
+  <section class="block" id="concepto">
+    <div class="shead"><span class="n" id="concept-n"></span><h2>Concepto y contactos</h2></div>
+    <div class="concept">
+      <blockquote>La campaña se desarrolló en colaboración con Alan Edel (<a href="https://www.instagram.com/alanedelll/" target="_blank" rel="noopener">@alanedelll</a>), creador de contenido panameño que comparte su día a día en el sector de la construcción. Su perfil representa una nueva generación de trabajadores que, con esfuerzo y dedicación, dejan huella en cada proyecto. Su estilo de vida encajó con el concepto de Ecko: la marca acompaña distintos entornos y formas de vivir, e integra sus botas de manera auténtica en la rutina laboral.</blockquote>
+      <div class="facts">
+        <div class="fact"><div class="k">Gerencia de Mercadeo</div><div class="v">Jenny Da Silva <small class="copyline"><span>jennyds@piazza.com.pa</span><button type="button" data-copy="jennyds@piazza.com.pa">Copiar</button></small></div></div>
+        <div class="fact"><div class="k">Ejecutiva Mercadeo Digital</div><div class="v">Michelle Quiñones <small class="copyline"><span>michelle.q@piazza.com.pa</span><button type="button" data-copy="michelle.q@piazza.com.pa">Copiar</button></small></div></div>
+        <div class="fact"><div class="k">VP de relaciones B2B</div><div class="v">Clara Sofía Flórez <small class="copyline"><span>clarasofia@piazza.com.pa</span><button type="button" data-copy="clarasofia@piazza.com.pa">Copiar</button></small></div></div>
+        <div class="fact"><div class="k">Archivos originales</div><div class="v"><a href="https://www.dropbox.com/scl/fo/zb891vqmns1dla35be8ln/AC84R0vIJQPy7lLcM3mzWaQ?rlkey=t5gsg8q4k2umvn0axv7xf2pso&amp;dl=0" target="_blank" rel="noopener">Carpeta de la campaña en Dropbox</a><small>Posts, stories y videos en su formato original</small></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap"><span>Ecko Unltd LATAM · Noviembre 2026</span><span>Consultas: socialmedia@piazza.com.pa</span></div></footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-labelledby="lb-title">
+  <div class="stage">
+    <button class="close" id="lb-close" type="button" aria-label="Cerrar">×</button>
+    <button class="nav prev" id="lb-prev" type="button" aria-label="Anterior">‹</button>
+    <img id="lb-img" alt="">
+    <div class="bar2"><div class="cap" id="lb-cap"></div><a class="dl" id="lb-dl" href="#" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg><span id="lb-dl-t">Descargar en alta</span></a></div>
+    <button class="nav next" id="lb-next" type="button" aria-label="Siguiente">›</button>
+  </div>
+  <aside>
+    <div class="eyebrow" id="lb-sec"></div>
+    <h3 id="lb-title"></h3>
+    <div class="notebox" id="lb-notes"></div>
+  </aside>
+</div>
+
+<script>
+const NOTES=false;
+const BASE=/*BASE*/"";const SAME=BASE==="";
+const DATA={"videos":[{"f":"ecko-1","n":1,"t":"Deja tu huella 1","d":"26 s · vertical"},{"f":"ecko-2","n":2,"t":"Deja tu huella 2","d":"26 s · vertical"},{"f":"ecko-3","n":3,"t":"Deja tu huella 3","d":"80 s · versión larga"}],"sections":[{"id":"redes","title":"Posts y stories","short":"Redes","sub":"Agrupados por modelo · archivos originales en alta","models":[{"name":"Acid H1","code":"EK-ACID-H1","ids":["post-ek-acid-h1-mkt","story-ek-acid-h1-mkt","story-ek-acid-h1-mkt-1"]},{"name":"Acid H3","code":"EK-ACID-H3","ids":["post-ek-acid-h3-mkt","story-ek-acid-h3-mkt","story-ek-acid-h3-mkt-2"]},{"name":"Aldo","code":"EK-ALDO-H4","ids":["post-ek-aldo-h4-mkt","story-ek-aldo-h4-mkt"]},{"name":"Kais","code":"EK-KAIS-H1","ids":["post-ek-kais-h1-mkt","story-ek-kais-h1-mkt"]},{"name":"Kumae","code":"EK-KUMAE-H2","ids":["post-ek-kumae-h2-0470-mkt","post-ek-kumae-h2-0523-mkt","post-ek-kumae-h2-0713-mkt"]},{"name":"Lexon","code":"EK-LEXON-H1","ids":["post-ek-lexon-h1-mkt","post-ek-lexon-h1-mkt-b","story-ek-lexon-h1-mkt","story-ek-lexon-h1-mkt-1"]},{"name":"Malti","code":"EK-MALTI-H3","ids":["post-ek-malti-h3"]},{"name":"Tara","code":"EK-TARA-H1","ids":["post-ek-tara-h1-0166-mkt","post-ek-tara-h1-0381-mkt"]}]},{"id":"laminas","title":"Láminas de campaña","short":"Láminas","sub":"Fotografía de la presentación","wide":true,"models":[{"name":"Láminas de campaña","code":"","ids":["slide-5","slide-6","slide-7","slide-8","slide-9","slide-10","slide-11","slide-12"]}]}],"dims":{"post-ek-acid-h1-mkt":[3375,4219],"post-ek-acid-h3-mkt":[3375,4219],"post-ek-aldo-h4-mkt":[3375,4219],"post-ek-kais-h1-mkt":[3375,4219],"post-ek-kumae-h2-0470-mkt":[4084,6124],"post-ek-kumae-h2-0523-mkt":[3205,4806],"post-ek-kumae-h2-0713-mkt":[4371,6554],"post-ek-lexon-h1-mkt":[3375,4219],"post-ek-lexon-h1-mkt-b":[3375,4219],"post-ek-malti-h3":[3709,5560],"post-ek-tara-h1-0166-mkt":[3601,5398],"post-ek-tara-h1-0381-mkt":[3482,5220],"story-ek-acid-h1-mkt":[3375,6000],"story-ek-acid-h1-mkt-1":[3375,6000],"story-ek-acid-h3-mkt":[3375,6000],"story-ek-acid-h3-mkt-2":[3375,6000],"story-ek-aldo-h4-mkt":[3375,6000],"story-ek-kais-h1-mkt":[3375,6000],"story-ek-lexon-h1-mkt":[3375,6000],"story-ek-lexon-h1-mkt-1":[3375,6000],"slide-2":[2880,1620],"slide-11":[2880,1620],"slide-8":[2880,1620],"slide-5":[2880,1620],"slide-7":[2880,1620],"slide-9":[2880,1620],"slide-3":[2880,1620],"slide-6":[2880,1620],"slide-12":[2880,1620],"slide-10":[2880,1620]}};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const slug=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^A-Za-z0-9]+/g,"-").replace(/^-|-$/g,"");
+const fmtOf=([w,h])=>{const r=h/w;return r>1.6?"Story 9:16":r>1.15?"Post 4:5":"Lámina"};
+
+let db=null,user=null,me=null,allNotes=[],names={};
+const subs=new Set();
+const notesFor=id=>allNotes.filter(n=>n.pieza===id).sort((a,b)=>a.creado-b.creado);
+function rerender(){subs.forEach(f=>f());updateCounts()}
+function noteBox(el,pieceId){
+  el.innerHTML=`<form><input type="text" maxlength="500" placeholder="Escribe una nota…" aria-label="Nota"><button type="submit">Añadir</button></form><ul class="notes"></ul><p class="empty">Aún no hay notas.</p><p class="status" hidden></p>`;
+  const form=el.querySelector("form"),input=el.querySelector("input"),list=el.querySelector(".notes"),empty=el.querySelector(".empty"),status=el.querySelector(".status");
+  input.id="n-"+pieceId;
+  form.addEventListener("submit",async e=>{e.preventDefault();const txt=input.value.trim();if(!txt)return;
+    if(!db){status.hidden=false;status.textContent="Inicia sesión en Claude para dejar notas.";return}
+    input.value="";status.hidden=true;
+    try{await db.collection("notas").add({pieza:pieceId,texto:txt,autor:me||"",creado:Date.now()})}
+    catch(err){input.value=txt;status.hidden=false;status.textContent=err&&err.code==="permission_denied"?"Tu acceso a esta página es de solo lectura; pide acceso de colaborador para comentar.":"No se pudo guardar la nota. Inténtalo de nuevo."}});
+  const render=()=>{const ns=notesFor(pieceId);empty.hidden=ns.length>0;
+    list.innerHTML=ns.map(n=>`<li><span>${esc(n.texto)}<span class="who">${esc(names[n.autor]||"Alguien del equipo")}</span></span>${n.autor&&n.autor===me?`<button class="x" type="button" data-del="${esc(n.id)}" aria-label="Borrar nota">×</button>`:'<span></span>'}</li>`).join("")};
+  list.addEventListener("click",async e=>{const d=e.target.closest("[data-del]");if(d&&db){try{await db.doc("notas/"+d.dataset.del).delete()}catch(_){}}});
+  subs.add(render);render();return render;
+}
+
+const PIECES=[];
+const secHost=document.getElementById("sections"),idx=document.getElementById("index"),chips=document.getElementById("models");
+let posts=0,stories=0;
+function tile(id,label,sec){
+  const i=PIECES.length,dim=DATA.dims[id],f=fmtOf(dim);
+  if(f.startsWith("Story"))stories++;else if(f.startsWith("Post"))posts++;
+  PIECES.push({id,label,sec,fmt:f});
+  const b=document.createElement("button");b.type="button";b.className="tile";b.dataset.piece=id;
+  b.innerHTML=`<img loading="lazy" src="img/t/${id}.jpg" width="${dim[0]}" height="${dim[1]}" alt="${esc(label)} · ${f}"><span class="fmt">${f}</span><span class="cnt"></span>`;
+  b.addEventListener("click",()=>openLb(i));return b;
+}
+let n=0;const num=()=>String(++n).padStart(2,"0");
+{
+  const k=num(),s=document.createElement("section");s.className="block";s.id="videos";
+  s.innerHTML=`<div class="shead"><span class="n">${k}</span><h2>Videos</h2><span class="c">Formato vertical 9:16 · con Alan Edel</span></div><div class="vids"></div>`;
+  const v=s.querySelector(".vids");
+  DATA.videos.forEach(x=>{const a=document.createElement("article");a.className="vid";
+    const href=(SAME?"":BASE)+"vidhq/"+x.f+".mp4";
+    a.innerHTML=`<video controls playsinline preload="metadata" poster="img/poster-${x.n}.jpg" src="vid/${x.f}.mp4"></video><h3>${esc(x.t)}</h3><p>${esc(x.d)}</p><a class="vdl" href="${href}" ${SAME?`download="Ecko-Deja-tu-huella-${x.n}.mp4"`:'target="_blank"'} rel="noopener">Descargar video en alta ↓</a>${NOTES?'<div class="notebox"></div>':''}`;
+    v.appendChild(a);if(NOTES)noteBox(a.querySelector(".notebox"),"v-"+x.f)});
+  secHost.appendChild(s);
+  idx.insertAdjacentHTML("beforeend",`<a href="#videos"><span class="n">${k}</span><span class="t">Videos</span><span class="c">${DATA.videos.length} piezas</span></a>`);
+  chips.insertAdjacentHTML("beforeend",`<a class="line" href="#videos">Videos</a>`);
+}
+DATA.sections.forEach(sec=>{
+  const k=num(),s=document.createElement("section");s.className="block";s.id=sec.id;
+  const total=sec.models.reduce((a,m)=>a+m.ids.length,0);
+  s.innerHTML=`<div class="shead"><span class="n">${k}</span><h2>${esc(sec.title)}</h2><span class="c">${esc(sec.sub)}</span></div>`;
+  chips.insertAdjacentHTML("beforeend",`<a class="line" href="#${sec.id}">${esc(sec.short)}</a>`);
+  sec.models.forEach(m=>{
+    const mid=sec.id+"-"+slug(m.name).toLowerCase(),d=document.createElement("div");d.className="model";d.id=mid;
+    d.innerHTML=`<div class="mhead">${sec.models.length>1?`<h3>${esc(m.name)}</h3>`:""}${m.code?`<span class="code">${esc(m.code)}</span>`:""}<span class="cnt2">${m.ids.length} piezas</span></div><div class="mason${sec.wide?" wide":""}"></div>`;
+    const g=d.querySelector(".mason");m.ids.forEach(id=>g.appendChild(tile(id,m.name,sec.title)));
+    s.appendChild(d);
+    if(sec.models.length>1)chips.insertAdjacentHTML("beforeend",`<a href="#${mid}">${esc(m.name)}</a>`);
+  });
+  secHost.appendChild(s);
+  idx.insertAdjacentHTML("beforeend",`<a href="#${sec.id}"><span class="n">${k}</span><span class="t">${esc(sec.short)}</span><span class="c">${total} piezas</span></a>`);
+});
+{const k=num();document.getElementById("concept-n").textContent=k;
+ idx.insertAdjacentHTML("beforeend",`<a href="#concepto"><span class="n">${k}</span><span class="t">Concepto</span><span class="c">Alan Edel y contactos</span></a>`);
+ chips.insertAdjacentHTML("beforeend",`<a class="line" href="#concepto">Concepto</a>`);}
+document.getElementById("meta").innerHTML=`<span><b>${DATA.videos.length}</b> videos</span><span><b>${DATA.sections[0].models.length}</b> modelos</span><span><b>${posts}</b> posts</span><span><b>${stories}</b> stories</span>`;
+if(!NOTES){document.getElementById("how").textContent="Abre cualquier pieza para verla en grande y descargarla en resolución original. También puedes bajar todo desde Dropbox.";document.getElementById("lb").classList.add("nonotes")}
+function updateCounts(){if(!NOTES)return;document.querySelectorAll(".tile").forEach(t=>{const c=notesFor(t.dataset.piece).length;t.querySelector(".cnt").textContent=c?c+(c===1?" nota":" notas"):""})}
+
+const chipLinks=[...chips.querySelectorAll("a")];
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){chipLinks.forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id));const on=chips.querySelector(".on");if(on)chips.scrollTo({left:on.offsetLeft-chips.clientWidth/2+on.clientWidth/2,behavior:"smooth"})}})},{rootMargin:"-120px 0px -70% 0px"});
+document.querySelectorAll(".model[id],#concepto,#videos").forEach(el=>io.observe(el));
+
+const lb=document.getElementById("lb");let cur=0,lbRender=null,lastFocus=null;
+function showLb(i){
+  cur=(i+PIECES.length)%PIECES.length;const p=PIECES[cur];
+  const img=document.getElementById("lb-img");img.src=`img/f/${p.id}.jpg`;img.alt=`${p.label} · ${p.fmt}`;
+  document.getElementById("lb-title").textContent=p.label;document.getElementById("lb-sec").textContent=p.sec;
+  document.getElementById("lb-cap").textContent=`${p.label} · ${p.fmt} · ${cur+1} de ${PIECES.length}`;
+  const dl=document.getElementById("lb-dl");dl.href=(SAME?"":BASE)+`hq/${p.id}.jpg`;
+  if(SAME){dl.setAttribute("download",`Ecko-Q3-26-${slug(p.label)}-${slug(p.fmt)}-${p.id}.jpg`)}else{dl.target="_blank";document.getElementById("lb-dl-t").textContent="Abrir en alta"}
+  if(NOTES){if(lbRender)subs.delete(lbRender);lbRender=noteBox(document.getElementById("lb-notes"),p.id)}
+}
+function openLb(i){lastFocus=document.activeElement;lb.hidden=false;document.body.style.overflow="hidden";showLb(i);document.getElementById("lb-close").focus()}
+function closeLb(){lb.hidden=true;document.body.style.overflow="";if(lbRender){subs.delete(lbRender);lbRender=null}lastFocus&&lastFocus.focus()}
+document.getElementById("lb-close").onclick=closeLb;
+document.getElementById("lb-prev").onclick=()=>showLb(cur-1);
+document.getElementById("lb-next").onclick=()=>showLb(cur+1);
+document.addEventListener("keydown",e=>{if(lb.hidden)return;if(e.key==="Escape")closeLb();if(e.target.tagName==="INPUT")return;if(e.key==="ArrowLeft")showLb(cur-1);if(e.key==="ArrowRight")showLb(cur+1)});
+lb.addEventListener("click",e=>{if(e.target.classList.contains("stage"))closeLb()});
+
+document.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click",()=>{
+  const t=b.dataset.copy;navigator.clipboard?.writeText(t).then(()=>{b.textContent="Copiado";setTimeout(()=>b.textContent="Copiar",1500)}).catch(()=>{const r=document.createRange();r.selectNodeContents(b.previousElementSibling);const s=getSelection();s.removeAllRanges();s.addRange(r)});
+}));
+
+if(NOTES)(async()=>{
+  if(!window.claude||!claude.use)return;
+  try{user=await claude.use("user");if(user)me=await user.id()}catch(_){}
+  try{db=await claude.use("db")}catch(_){db=null}
+  if(!db)return;
+  db.collection("notas").onSnapshot(async snap=>{
+    allNotes=snap.docs.map(d=>({id:d.id,...d.data()}));rerender();
+    if(user){const ids=[...new Set(allNotes.map(n=>n.autor).filter(Boolean))];
+      if(ids.length){try{const ps=await user.profiles(ids);ids.forEach(i=>{if(ps[i]&&ps[i].name)names[i]=ps[i].name});rerender()}catch(_){}}}
+  },()=>{});
+})();
+</script>
+</body>
+</html>
