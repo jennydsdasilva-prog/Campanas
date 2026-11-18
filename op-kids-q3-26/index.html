@@ -9,23 +9,23 @@
 <meta property="og:image" content="img/f/p1.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Jost:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap">
 <style>
-/* Layout: a bright playroom delivery page. Lavender set walls and rounded Fredoka headings taken from the "Los niños cool usan" lockup, purple for actions and a navy arch as the one graphic flourish. Standard campaign pieces first, then web banners, then content grouped by kids' model, then contacts. */
+/* Layout: a bright playroom delivery page. Lavender set walls, Futura throughout as in the brand decks, and the OP Kids logo purple for every accent. Standard campaign pieces first, then web banners, then content grouped by kids' model, then contacts. */
 :root{
   --bg:#f4f0fb; --surface:#ffffff; --raise:#ebe4f6; --ink:#24183a; --muted:#6f6582; --line:#e2d9f0;
-  --red:#7a2e9a; --red-ink:#7a2e9a; --on-red:#ffffff; --concrete:#3d3152; --navy:#24418f;
-  --display:"Fredoka","Baloo 2","Trebuchet MS",system-ui,sans-serif;
-  --body:"Jost","Avenir Next","Segoe UI",system-ui,sans-serif;
-  --hand:"Fredoka","Trebuchet MS",sans-serif;
+  --red:#7a2e9a; --red-ink:#7a2e9a; --on-red:#ffffff; --concrete:#3d3152; --navy:#6b2d8f;
+  --display:"Futura","Futura PT","Futura Std","Jost","Century Gothic",system-ui,sans-serif;
+  --body:"Futura","Futura PT","Futura Std","Jost","Century Gothic",system-ui,sans-serif;
+  --hand:var(--display);
   --r:14px;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#17121f; --surface:#211a2c; --raise:#2c2339; --ink:#f3eefb; --muted:#ab9fbe; --line:#352b45;
-  --red:#b77bd6; --red-ink:#cf9cec; --on-red:#1b1124; --concrete:#ddd3ea; --navy:#8aa5ef; color-scheme:dark}}
+  --red:#b77bd6; --red-ink:#cf9cec; --on-red:#1b1124; --concrete:#ddd3ea; --navy:#8e45b5; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#17121f; --surface:#211a2c; --raise:#2c2339; --ink:#f3eefb; --muted:#ab9fbe; --line:#352b45;
-  --red:#b77bd6; --red-ink:#cf9cec; --on-red:#1b1124; --concrete:#ddd3ea; --navy:#8aa5ef; color-scheme:dark}
+  --red:#b77bd6; --red-ink:#cf9cec; --on-red:#1b1124; --concrete:#ddd3ea; --navy:#8e45b5; color-scheme:dark}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
 .wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
@@ -54,6 +54,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .intro h1{font-size:clamp(2.6rem,6.5vw,4.8rem);line-height:1}
 .intro h1 .hand{display:inline-block;margin-top:.12em;background:var(--navy);color:#fff;border-radius:999px;padding:.02em .45em .1em;font-size:.95em}
 .intro h1 .hand b{color:#ffd23f;font-weight:700}
+.intro h1 .hand{background:var(--navy)}
 .lede{font-size:1.06rem;max-width:60ch;margin:0;color:var(--concrete)}
 .lede a{color:var(--red-ink)}
 .meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:26px;font-size:.88rem;color:var(--muted)}
@@ -61,6 +62,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .igbtn{display:inline-flex;align-items:center;gap:8px;margin-top:18px;border:1px solid var(--red);color:var(--ink);border-radius:var(--r);padding:8px 14px;font-size:.88rem;font-weight:600;text-decoration:none}
 .igbtn:hover{background:var(--red);color:var(--on-red)}
 .igbtn svg{width:18px;height:18px}
+.lede+.lede{margin-top:14px}
+.cta{display:inline-flex;align-items:center;gap:10px;margin-top:24px;background:var(--navy);color:#fff;border-radius:999px;padding:12px 20px;font-weight:600;text-decoration:none;font-size:.98rem}
+.cta svg{width:18px;height:18px}
+.cta:hover{filter:brightness(1.1)}
 .how{margin-top:20px;padding:14px 16px;border-left:3px solid var(--red);background:var(--surface);font-size:.92rem;color:var(--concrete)}
 
 .index{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -181,10 +186,11 @@ html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{dis
     <div>
       <div class="eyebrow">Ocean Pacific Footwear · Noviembre 2026</div>
       <h1>Los niños cool usan <span class="hand">OP <b>Kids</b></span></h1>
-      <div class="meta" id="meta"></div>
+      <a class="cta" href="https://www.dropbox.com/scl/fo/yfif2l4g6xyae4dgnmuxp/AFxS5N-yF3MdRMPM0a_AkAs?rlkey=lwdb549bpcppuak8mtap2kmq8&amp;dl=0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>Ver fotos detalladas en Dropbox</a>
     </div>
     <div>
       <p class="lede">Portafolio de contenido digital OP Kids para la colección Q3 2026: fotografía con niños, producto en detalle y piezas listas para redes, banners y tienda online, para que cada mercado comunique la colección con una sola voz: fresca, alegre y auténticamente cool.</p>
+      <p class="lede">Este portafolio sigue creciendo. Las fotos detalladas de cada modelo, en alta resolución, están en la carpeta de Dropbox.</p>
       <div class="how" id="how">Abre cualquier pieza para verla en grande, dejar notas o abrirla en alta resolución. Todo el equipo ve las mismas notas.</div>
     </div>
   </div>
@@ -195,7 +201,7 @@ html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{dis
   <section class="block" id="concepto">
     <div class="shead"><span class="n" id="concept-n"></span><h2>Contactos</h2></div>
     <div class="concept">
-      <blockquote>Este portafolio presenta los assets generados y no muestra la totalidad de la colección. Los archivos en alta resolución están en la carpeta de Dropbox y en la carpeta de cada cliente.</blockquote>
+      <blockquote>Esta galería presenta una selección del contenido generado y no muestra la totalidad de la colección. Consulta la <a href="https://www.dropbox.com/scl/fo/yfif2l4g6xyae4dgnmuxp/AFxS5N-yF3MdRMPM0a_AkAs?rlkey=lwdb549bpcppuak8mtap2kmq8&amp;dl=0" target="_blank" rel="noopener">carpeta de Dropbox</a> para ver todas las fotos detalladas en alta resolución, y la carpeta de tu cliente para el material asignado.</blockquote>
       <div class="facts">
         <div class="fact"><div class="k">Instagram</div><div class="v">@Op_latam <small>Envíanos collab</small></div></div>
         <div class="fact"><div class="k">Gerencia de Mercadeo</div><div class="v">Jenny Da Silva <small class="copyline"><span>jennyds@piazza.com.pa</span><button type="button" data-copy="jennyds@piazza.com.pa">Copiar</button></small></div></div>
@@ -227,7 +233,7 @@ html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{dis
 <script>
 const NOTES=false;
 const BASE=/*BASE*/"";const SAME=BASE==="";
-const DATA={"models":7,"sections":[{"id":"estandar","title":"Imágenes estándar de campaña","short":"Estándar","sub":"Stories y posts con el mensaje “Los niños cool usan OP Kids”","models":[{"name":"Imágenes estándar","code":"","ids":["p19","p20","p21","p22","p23","p24","p25","p26","p27","p28","p29","p30"]}]},{"id":"banners","title":"Banner web","short":"Banners","sub":"Desktop y mobile para tienda online","wide":true,"models":[{"name":"Banner web","code":"","ids":["p17","p18"]}]},{"id":"modelos","title":"Contenido por modelo","short":"Modelos","sub":"Fotografía con niños y producto en detalle","models":[{"name":"Ciro","code":"OPK-CIRO-N1 · N2","ids":["p31","p45","p46"]},{"name":"Usman","code":"OPK-USMAN-N22 · N24","ids":["p47","p48","p49","p51","p52"]},{"name":"Igo","code":"OPK-IGO-N3 · N5 · N6","ids":["p41","p42","p43","p59"]},{"name":"Lanry","code":"","ids":["p34","p35","p36","p37"]},{"name":"Baquilio","code":"OPK-BAQUILIO-J56 · J57 · N88","ids":["p39","p58","p60"]},{"name":"Irmi","code":"OPK-IRMI-J2 · N5 · N6","ids":["p53","p54","p55","p61"]},{"name":"Pelin","code":"OPK-PELIN-G29 · G35","ids":["p32","p38","p44"]},{"name":"Más contenido","code":"","ids":["p40","p50","p56","p57","p62"]}]}],"dims":{"p1":[3840,2160],"p13":[3840,2160],"p17":[3840,1265],"p18":[1128,1497],"p19":[2160,3840],"p20":[2160,3840],"p21":[2160,3840],"p22":[2160,3840],"p23":[2160,3840],"p24":[2160,3840],"p25":[2160,2700],"p26":[2160,3840],"p27":[2160,3840],"p28":[2160,3840],"p29":[2160,3840],"p30":[2160,3840],"p31":[2160,3840],"p32":[2160,2700],"p34":[2160,2700],"p35":[2160,2700],"p36":[2160,2700],"p37":[2160,3840],"p38":[2160,2700],"p39":[2160,3840],"p40":[2160,2700],"p41":[2160,2700],"p42":[2160,3840],"p43":[2160,2700],"p44":[2160,3840],"p45":[2160,2700],"p46":[2160,2160],"p47":[2160,3840],"p48":[2160,3840],"p49":[2160,2700],"p50":[2160,3840],"p51":[2160,3840],"p52":[2160,2700],"p53":[2160,3840],"p54":[2160,2160],"p55":[2160,3840],"p56":[2160,3840],"p57":[2160,2700],"p58":[2160,2700],"p59":[2160,2700],"p60":[2160,3840],"p61":[2160,2700],"p62":[2160,3840]}};
+const DATA={"sections":[{"id":"estandar","title":"Imágenes estándar de campaña","short":"Estándar","sub":"Stories y posts con el mensaje “Los niños cool usan OP Kids”","models":[{"name":"Imágenes estándar","code":"","ids":["p19","p20","p21","p22","p23","p24","p25","p26","p27","p28","p29","p30"]}],"cshort":"Stories y posts"},{"id":"banners","title":"Banner web","short":"Banners","sub":"Desktop y mobile para tienda online","wide":true,"models":[{"name":"Banner web","code":"","ids":["p17","p18"]}],"cshort":"Desktop y mobile"},{"id":"modelos","title":"Contenido por modelo","short":"Modelos","sub":"Fotografía con niños y producto en detalle · más fotos en Dropbox","models":[{"name":"Ciro","code":"OPK-CIRO-N1 · N2","ids":["p31","p45","p46"]},{"name":"Usman","code":"OPK-USMAN-N22 · N24","ids":["p47","p48","p49","p51","p52"]},{"name":"Igo","code":"OPK-IGO-N3 · N5 · N6","ids":["p41","p42","p43","p59"]},{"name":"Lanry","code":"","ids":["p34","p35","p36","p37"]},{"name":"Baquilio","code":"OPK-BAQUILIO-J56 · J57 · N88","ids":["p39","p58","p60"]},{"name":"Irmi","code":"OPK-IRMI-J2 · N5 · N6","ids":["p53","p54","p55","p61"]},{"name":"Pelin","code":"OPK-PELIN-G29 · G35","ids":["p32","p38","p44"]},{"name":"Más contenido","code":"","ids":["p40","p50","p56","p57","p62"]}],"cshort":"Por estilo"}],"dims":{"p1":[3840,2160],"p13":[3840,2160],"p17":[3840,1265],"p18":[1128,1497],"p19":[2160,3840],"p20":[2160,3840],"p21":[2160,3840],"p22":[2160,3840],"p23":[2160,3840],"p24":[2160,3840],"p25":[2160,2700],"p26":[2160,3840],"p27":[2160,3840],"p28":[2160,3840],"p29":[2160,3840],"p30":[2160,3840],"p31":[2160,3840],"p32":[2160,2700],"p34":[2160,2700],"p35":[2160,2700],"p36":[2160,2700],"p37":[2160,3840],"p38":[2160,2700],"p39":[2160,3840],"p40":[2160,2700],"p41":[2160,2700],"p42":[2160,3840],"p43":[2160,2700],"p44":[2160,3840],"p45":[2160,2700],"p46":[2160,2160],"p47":[2160,3840],"p48":[2160,3840],"p49":[2160,2700],"p50":[2160,3840],"p51":[2160,3840],"p52":[2160,2700],"p53":[2160,3840],"p54":[2160,2160],"p55":[2160,3840],"p56":[2160,3840],"p57":[2160,2700],"p58":[2160,2700],"p59":[2160,2700],"p60":[2160,3840],"p61":[2160,2700],"p62":[2160,3840]}};
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const slug=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^A-Za-z0-9]+/g,"-").replace(/^-|-$/g,"");
 const fmtOf=([w,h])=>{const r=h/w;return r>1.6?"Story 9:16":r>1.15?"Post 4:5":r>0.9?"Post 1:1":"Banner"};
@@ -270,19 +276,18 @@ DATA.sections.forEach(sec=>{
   chips.insertAdjacentHTML("beforeend",`<a class="line" href="#${sec.id}">${esc(sec.short)}</a>`);
   sec.models.forEach(m=>{
     const mid=sec.id+"-"+slug(m.name).toLowerCase(),d=document.createElement("div");d.className="model";d.id=mid;
-    d.innerHTML=`<div class="mhead">${sec.models.length>1?`<h3>${esc(m.name)}</h3>`:""}${m.code?`<span class="code">${esc(m.code)}</span>`:""}<span class="cnt2">${m.ids.length} piezas</span></div><div class="mason${sec.wide?" wide":""}"></div>`;
+    d.innerHTML=`<div class="mhead">${sec.models.length>1?`<h3>${esc(m.name)}</h3>`:""}${m.code?`<span class="code">${esc(m.code)}</span>`:""}</div><div class="mason${sec.wide?" wide":""}"></div>`;
     const g=d.querySelector(".mason");m.ids.forEach(id=>g.appendChild(tile(id,m.name,sec.title)));
     s.appendChild(d);
     if(sec.models.length>1)chips.insertAdjacentHTML("beforeend",`<a href="#${mid}">${esc(m.name)}</a>`);
   });
   secHost.appendChild(s);
-  idx.insertAdjacentHTML("beforeend",`<a href="#${sec.id}"><span class="n">${k}</span><span class="t">${esc(sec.short)}</span><span class="c">${total} piezas</span></a>`);
+  idx.insertAdjacentHTML("beforeend",`<a href="#${sec.id}"><span class="n">${k}</span><span class="t">${esc(sec.short)}</span><span class="c">${esc(sec.cshort||"")}</span></a>`);
 });
 {const k=num();document.getElementById("concept-n").textContent=k;
  idx.insertAdjacentHTML("beforeend",`<a href="#concepto"><span class="n">${k}</span><span class="t">Contactos</span><span class="c">Equipo y Dropbox</span></a>`);
  chips.insertAdjacentHTML("beforeend",`<a class="line" href="#concepto">Contactos</a>`);}
-document.getElementById("meta").innerHTML=`<span><b>${DATA.models}</b> modelos</span><span><b>${posts}</b> posts</span><span><b>${stories}</b> stories</span>`;
-if(!NOTES){document.getElementById("how").textContent="Abre cualquier pieza para verla en grande y descargarla en alta resolución. También puedes bajar todo desde Dropbox.";document.getElementById("lb").classList.add("nonotes")}
+if(!NOTES){document.getElementById("how").textContent="Abre cualquier pieza para verla en grande y descargarla en alta. Para todas las fotos detalladas, consulta la carpeta de Dropbox.";document.getElementById("lb").classList.add("nonotes")}
 function updateCounts(){if(!NOTES)return;document.querySelectorAll(".tile").forEach(t=>{const c=notesFor(t.dataset.piece).length;t.querySelector(".cnt").textContent=c?c+(c===1?" nota":" notas"):""})}
 
 const chipLinks=[...chips.querySelectorAll("a")];
